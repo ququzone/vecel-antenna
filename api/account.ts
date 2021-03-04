@@ -6,6 +6,5 @@ export default async function (req: NowRequest, res: NowResponse) {
   const { address = 'io1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqd39ym7' } = req.query;
   // @ts-ignore
   const account = await antenna.iotx.getAccount({address});
-  console.log(account);
-  res.send(`account ${address} balance: ${account.accountMeta.balance}!`);
+  res.send(`account ${address} balance: ${JSON.stringify(account)}!`);
 };
