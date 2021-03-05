@@ -7,8 +7,5 @@ export default async function (req: NowRequest, res: NowResponse) {
 
   const acct = antenna.iotx.accounts.create();
 
-  // const account = await antenna.iotx.getAccount({
-  //   address: "io183utcxzg0haqa7df2qqlltrwaf42wswj2rpu5w"
-  // });
   res.send(`account ${address} balance: ${JSON.stringify(acct)}!`);
 };
