@@ -11,7 +11,7 @@ export default async function (req: NowRequest, res: NowResponse) {
 
   console.log("before request rpc");
   // @ts-ignore
-  const acct = antenna.getAccount({address});
+  const acct = await antenna.getAccount({address});
 
   res.send(`account ${address} balance: ${JSON.stringify(acct)}!`);
 };
