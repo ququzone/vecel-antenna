@@ -1,10 +1,8 @@
 import { NowRequest, NowResponse } from '@vercel/node';
-import Antenna from 'iotex-antenna/lib/antenna';
+import { Accounts } from 'iotex-antenna/lib/account/accounts';
 
 export default async function (req: NowRequest, res: NowResponse) {
-  const antenna = new Antenna("http://api.testnet.iotex.one:80");
-
-  const acct = antenna.iotx.accounts.create();
+  const acct = new Accounts().create();
 
   res.send(`created account: ${JSON.stringify(acct)}!`);
 };
